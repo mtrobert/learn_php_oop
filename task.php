@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ *  An example class 
  */
 class Task
 {
