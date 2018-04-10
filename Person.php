@@ -4,7 +4,7 @@
   */
  class Person
  {
-   public $name, $age;
+   private $name, $age;
 
 
    function __construct($name, $age)
@@ -34,12 +34,12 @@
      return $this->age;
    }
 
-   public function ageValidation()
+   public function ageValidation()                //checks users age
    {
      if($this->age >= 18){
        echo "Welcome " . $this->name . ".";
      }else {
-       echo $this->name . " ,you need to be 18 or over to access content.";
+       echo $this->name . " ,you need to be 18 or over to access this content.";
      }
    }
 
