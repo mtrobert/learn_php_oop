@@ -2,9 +2,9 @@
  /**
   * represents generic properties and methods for any type of car
   */
- class Car
+abstract class Car
  {
-   protected $colour, $doorNumber, $fuelType, $rightHandDrive;
+   protected $colour, $doorNumber, $fuelType, $rightHandDrive, $accelerate;
 
    public function __construct($rightHandDrive = true)
    {
@@ -51,30 +51,9 @@
      $this->rightHandDrive = $rightHandDrive;
    }
 
-
+   abstract protected function accelerate();
 
  }
-
-
-// echo (new Car())->getRightHandDrive();
-
-$car = new Car(false);
-var_dump($car);
-$car->setRightHandDrive(true);
-$car->setColour('Green');
-$car->setFuelType('Petrol');
-$car->setDoorNumber(2);
-var_dump($car);
-
-
-
-
-
-
-
-
-
-
 
 
 ?>
