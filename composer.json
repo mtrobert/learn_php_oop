@@ -1,3 +1,7 @@
 {
-
+  "autoload":{
+    "psr-4":{
+      "b_and_b\\": "src"
+    }
+  }
 }
