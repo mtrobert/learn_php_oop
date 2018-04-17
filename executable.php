@@ -1,10 +1,8 @@
 <?php
-/**
- * An executable file. Messaging concept in OOP using classes Bussines, Staff and Employee.
- */
- require 'src/Bussiness.php';
- require 'src/Staff.php';
- require 'src/Employee.php';
+
+use b_and_b\Employee;
+use b_and_b\Staff;
+use b_and_b\Bussiness;
 
  $employee = new Employee();
  $staff = new Staff([$employee]);
