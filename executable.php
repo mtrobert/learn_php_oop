@@ -1,6 +1,6 @@
 <?php
 
-use b_and_b\Employee;
+use b_and_b\personnel\Employee;
 use b_and_b\Staff;
 use b_and_b\Bussiness;
 

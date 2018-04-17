@@ -3,7 +3,7 @@
  *
  */
 
-namespace b_and_b;
+namespace b_and_b\personnel;
 
 class Employee
 {

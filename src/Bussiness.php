@@ -5,6 +5,8 @@
 
 namespace b_and_b;
 
+use b_and_b\personnel\Employee;
+
 class Bussiness
 {
 
