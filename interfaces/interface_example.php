@@ -20,7 +20,18 @@ class Dog implements Animal
 
 }
 
+class Cat implements Animal
+{
+
+  public function communicate($sound){
+    return $sound;
+  }
+
+}
+
 echo "\n" . ((new Dog())->communicate('bark')) . '  -> first interface example' . "\n";
+echo "\n" . ((new Cat())->communicate('meow')) . '  -> first interface example' . "\n";
+echo "\n" . '******************************' . "\n";
 
 
 /***************************************************************
