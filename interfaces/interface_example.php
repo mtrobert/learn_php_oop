@@ -5,7 +5,7 @@
 
 interface Animal
 {
-  public function communicate($sound);
+  public function communicate();
 }
 
 /**
@@ -14,8 +14,8 @@ interface Animal
 class Dog implements Animal
 {
 
-  public function communicate($sound){
-    return $sound;
+  public function communicate(){
+    return 'Bark';
   }
 
 }
@@ -23,14 +23,14 @@ class Dog implements Animal
 class Cat implements Animal
 {
 
-  public function communicate($sound){
-    return $sound;
+  public function communicate(){
+    return 'Meow';
   }
 
 }
 
-echo "\n" . ((new Dog())->communicate('bark')) . '  -> first interface example' . "\n";
-echo "\n" . ((new Cat())->communicate('meow')) . '  -> first interface example' . "\n";
+echo "\n" . ((new Dog())->communicate()) . '  -> first interface example' . "\n";
+echo "\n" . ((new Cat())->communicate()) . '  -> first interface example' . "\n";
 echo "\n" . '******************************' . "\n";
 
 
@@ -38,7 +38,10 @@ echo "\n" . '******************************' . "\n";
                     SECOND INTERFACE EXAMPLE
 ***************************************************************/
 
-
+interface Logger
+{
+  // public function execute();
+}
 
 
 
