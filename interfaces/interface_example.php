@@ -14,7 +14,8 @@ interface Animal
 class Dog implements Animal
 {
 
-  public function communicate(){
+  public function communicate()
+  {
     return 'Bark';
   }
 
@@ -23,7 +24,8 @@ class Dog implements Animal
 class Cat implements Animal
 {
 
-  public function communicate(){
+  public function communicate()
+  {
     return 'Meow';
   }
 
@@ -45,15 +47,35 @@ interface Logger
 
 class LogToFile
 {
-  public function execute($message){
+  public function execute($message)
+  {
     var_dump('Log to a file -> ' . $message);
   }
 }
 
 class LogToDatabase
 {
-  public function execute($message){
+  public function execute($message)
+  {
     var_dump('Log to a database -> ' . $message);
   }
 }
+
+class UsersController
+{
+
+  protected $logger;
+
+  public function __construct(LogToFile $logger)
+  {
+      $this->logger = $logger;
+  }
+
+  public function show()
+  {
+    $user = "Robert Marczak";
+    $this->logger->execute($user);
+  }
+}
+
 ?>
