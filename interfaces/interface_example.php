@@ -43,6 +43,17 @@ interface Logger
   // public function execute();
 }
 
+class LogToFile
+{
+  public function execute($message){
+    var_dump('Log to a file -> ' . $message);
+  }
+}
 
-
+class LogToDatabase
+{
+  public function execute($message){
+    var_dump('Log to a database -> ' . $message);
+  }
+}
 ?>
