@@ -31,9 +31,9 @@ class Cat implements Animal
 
 }
 
-echo "\n" . ((new Dog())->communicate()) . '  -> first interface example' . "\n";
-echo "\n" . ((new Cat())->communicate()) . '  -> first interface example' . "\n";
-echo "\n" . '******************************' . "\n";
+echo "\n" . ((new Dog())->communicate());
+echo "\n" . ((new Cat())->communicate()) . "\n";
+echo "\n" . '******************************' . "\n" . "\n";
 
 
 /***************************************************************
@@ -45,7 +45,7 @@ interface Logger
   // public function execute();
 }
 
-class LogToFile
+class LogToFile implements Logger
 {
   public function execute($message)
   {
@@ -53,7 +53,7 @@ class LogToFile
   }
 }
 
-class LogToDatabase
+class LogToDatabase implements Logger
 {
   public function execute($message)
   {
@@ -66,16 +66,35 @@ class UsersController
 
   protected $logger;
 
-  public function __construct(LogToFile $logger)
-  {
+  public function __construct(Logger $logger)       //coding to the interface not to the implementation,
+  {                                                 // so the class does not to be change later in the lifcycle
       $this->logger = $logger;
   }
 
-  public function show()
+  public function show($user)
   {
-    $user = "Robert Marczak";
+    $user = $user;
     $this->logger->execute($user);
   }
 }
+
+$userController = new UsersController(new LogToFile);             // we only change the argument where it needs changing
+$userController->show('Robert Marczak');
+
+$userController = new UsersController(new LogToDatabase);         // we only change the argument where it needs changing
+$userController->show('Marcelo Garcia');
+
+echo "\n" . '******************************' . "\n";
+
+
+/***************************************************************
+                    THIRD INTERFACE EXAMPLE
+***************************************************************/
+
+
+
+
+
+
 
 ?>
