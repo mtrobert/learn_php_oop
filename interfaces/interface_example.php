@@ -84,7 +84,7 @@ $userController->show('Robert Marczak');
 $userController = new UsersController(new LogToDatabase);         // we only change the argument where it needs changing
 $userController->show('Marcelo Garcia');
 
-echo "\n" . '******************************' . "\n";
+echo "\n" . '******************************' . "\n" . "\n";
 
 
 /***************************************************************
@@ -94,10 +94,18 @@ echo "\n" . '******************************' . "\n";
 
 interface CanBeDriven
 {
-  public function drive();
+  public function drive($driversName);
 }
 
+class Car implements CanBeDriven
+{
 
+  protected $driver;
+
+  public function drive($driversName)
+  {
+    $this->driver = $driversName;
+    var_dump('I am a car. ' . $this->driver . ' drives me normally.');
   }
 
 
