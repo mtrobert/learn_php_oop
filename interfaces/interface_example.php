@@ -132,8 +132,21 @@ class SportCar implements CanBeDriven
 
 }
 
+class Tractor implements CanBeDriven
+{
+
+  protected $driver;
+
+  public function drive($driversName)
+  {
+    $this->driver = $driversName;
+    var_dump('I am a tractor. ' . $this->driver . ' uses me to plow the field.');
+  }
+
+}
 
 
-(new SportCar())->drive('Johnatan');
+
+(new Tractor())->drive('Johnatan');
 
 ?>
