@@ -145,8 +145,28 @@ class Tractor implements CanBeDriven
 
 }
 
+/**
+ *
+ */
+class Vehicle
+{
+
+  protected $vehicle;
+
+  function __construct(CanBeDriven $vehicle)
+  {
+    $this->vehicle = $vehicle;
+  }
+
+  public function move($operator)
+  {
+      $this->vehicle->drive($operator);
+  }
+
+}
 
 
-(new Tractor())->drive('Johnatan');
+
+
 
 ?>
