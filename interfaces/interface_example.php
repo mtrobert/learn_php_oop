@@ -5,12 +5,11 @@
 
 interface Animal
 {
+
   public function communicate();
+
 }
 
-/**
- *
- */
 class Dog implements Animal
 {
 
@@ -42,23 +41,29 @@ echo "\n" . '******************************' . "\n" . "\n";
 
 interface Logger
 {
-  // public function execute();
+
+   public function execute($message);
+
 }
 
 class LogToFile implements Logger
 {
+
   public function execute($message)
   {
     var_dump('Log to a file -> ' . $message);
   }
+
 }
 
 class LogToDatabase implements Logger
 {
+
   public function execute($message)
   {
     var_dump('Log to a database -> ' . $message);
   }
+
 }
 
 class UsersController
@@ -76,7 +81,9 @@ class UsersController
     $user = $user;
     $this->logger->execute($user);
   }
+
 }
+
 
 $userController = new UsersController(new LogToFile);             // we only change the argument where it needs changing
 $userController->show('Robert Marczak');
@@ -94,7 +101,9 @@ echo "\n" . '******************************' . "\n" . "\n";
 
 interface CanBeDriven
 {
+
   public function drive($driversName);
+
 }
 
 class Car implements CanBeDriven
@@ -108,11 +117,23 @@ class Car implements CanBeDriven
     var_dump('I am a car. ' . $this->driver . ' drives me normally.');
   }
 
+}
+
+class SportCar implements CanBeDriven
+{
+
+  protected $driver;
+
+  public function drive($driversName)
+  {
+    $this->driver = $driversName;
+    var_dump('I am a Sportcar. ' . $this->driver . ' drives me fast.');
+  }
 
 }
 
 
 
-
+(new SportCar())->drive('Johnatan');
 
 ?>
