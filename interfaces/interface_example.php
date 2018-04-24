@@ -166,6 +166,12 @@ class Vehicle
 }
 
 
+$vehicle1 = new Vehicle(new Car());
+$vehicle2 = new Vehicle(new SportCar());
+$vehicle3 = new Vehicle(new Tractor());
+$vehicle1->move('Jonathan Smiley');
+$vehicle2->move('Robert Marczak');
+$vehicle3->move('Marcelo Garcia');
 
 
 
