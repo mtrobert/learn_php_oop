@@ -15,17 +15,17 @@ class AuthController
 
   public function register()
   {
-    $this->registration->execute();
+    $this->registration->execute([], $this);
   }
 
   public function userRegisteredSuccessfully()
   {
-    var_dump('User registered  successfully.');
+    var_dump('When the user was registered successfully we do something here ei. return a view.');
   }
 
   public function userRegistrationFailed()
   {
-    var_dump('User registration failed.');
+    var_dump('When the user registration failed we do something here ei. redirect to the form page.');
   }
 
 
