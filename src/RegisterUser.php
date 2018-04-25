@@ -11,6 +11,13 @@ class RegisterUser
   {                                                           //$listener reffers to the object it is called in ($this as an argument)
     var_dump('Registering user using the data provided.');
 
+    $condition = true;
+
+    if ($condition) {                                         //sending the message depending on registration status ($condition)
+      $listener->userRegisteredSuccessfully();
+    }else {
+      $listener->userRegistrationFailed();
+    }
 
   }
 
