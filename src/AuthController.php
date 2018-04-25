@@ -1,15 +1,17 @@
 <?php
-
+namespace b_and_b;
 /**
  *
  */
 class AuthController
 {
 
-  function __construct(argument)
+  public function register()
   {
-    // code...
+
   }
+
+
 }
 
 
