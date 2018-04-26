@@ -3,7 +3,7 @@ namespace b_and_b;
 /**
  *
  */
-class AuthController
+class AuthController implements interfaces\RespondsToUserRegistration
 {
 
   protected $registration;
